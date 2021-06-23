@@ -27,7 +27,7 @@ describe('debug_test', () => {
       // browser.execute("seetest:client.startPerformanceTransaction(\"4G-average\")");
 
       // Capture Performance Metrics for specific Application
-      browser.execute("seetest:client.startPerformanceTransaction(\"com.apple.mobilesafari\", \"4G-average\")");
+      browser.execute("seetest:client.startPerformanceTransactionForApplication(\"com.apple.mobilesafari\", \"4G-average\")");
 
       browser.url("https://github.com/login");
 
@@ -35,7 +35,7 @@ describe('debug_test', () => {
 
       $("//*[@id='login_field']").waitForDisplayed(10000, false, "Could not find element", 2);
 
-      browser.execute("seetest:client.startPerformanceTransaction(\"com.apple.mobilesafari\", \"4G-average\")");
+      browser.execute("seetest:client.startPerformanceTransactionForApplication(\"com.apple.mobilesafari\", \"4G-average\")");
 
       browser.$("//*[@id='login_field']").setValue("dummyuser");
       browser.$("//*[@id='password']").setValue("dummypassword");
